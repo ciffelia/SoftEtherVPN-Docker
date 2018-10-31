@@ -1,0 +1,21 @@
+version: '3.7'
+
+services:
+  vpnserver:
+    image: docker.ciffelia.com/softether-vpn
+    build:
+      context: .
+      cache_from:
+        - docker.ciffelia.com/softether-vpn
+    restart: always
+    init: true
+    privileged: true
+    network_mode: host
+    ports:
+      # L2TP
+      - "500:500"
+      - "4500:4500"
+      # SoftEther VPN
+      - "12973:12973"
+    volumes:
+      - ./vpn_server.config:/usr/local/vpnserver/vpn_server.config
