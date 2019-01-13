@@ -2,11 +2,8 @@ version: '3.7'
 
 services:
   vpnserver:
-    image: docker.ciffelia.com/softether-vpn
-    build:
-      context: .
-      cache_from:
-        - docker.ciffelia.com/softether-vpn
+    image: ciffelia/softether-vpn
+    build: .
     restart: always
     init: true
     privileged: true
