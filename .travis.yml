@@ -1,8 +1,11 @@
-language: general
+language: minimal
 
 dist: xenial
 services:
   - docker
+
+env:
+  - PORT=443
 
 script:
   - docker-compose build
