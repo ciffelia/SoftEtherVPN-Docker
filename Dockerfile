@@ -1,9 +1,9 @@
 FROM buildpack-deps:stretch AS builder
 
-ADD https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.28-9669-beta/softether-vpnserver-v4.28-9669-beta-2018.09.11-linux-x64-64bit.tar.gz /root
+ADD https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.29-9680-rtm/softether-vpnserver-v4.29-9680-rtm-2019.02.28-linux-x64-64bit.tar.gz /root
 
 WORKDIR /root
-RUN tar xf softether-vpnserver-v4.28-9669-beta-2018.09.11-linux-x64-64bit.tar.gz
+RUN tar xf softether-vpnserver-v4.29-9680-rtm-2019.02.28-linux-x64-64bit.tar.gz
 
 WORKDIR /root/vpnserver
 RUN make i_read_and_agree_the_license_agreement
