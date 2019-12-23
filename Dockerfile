@@ -1,4 +1,4 @@
-FROM buildpack-deps:stretch AS builder
+FROM buildpack-deps:buster AS builder
 
 ADD https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.29-9680-rtm/softether-vpnserver-v4.29-9680-rtm-2019.02.28-linux-x64-64bit.tar.gz /root
 
@@ -10,7 +10,7 @@ RUN make i_read_and_agree_the_license_agreement
 
 #*#*#*#*#*#*#*#*#*#*#*#
 
-FROM debian:stretch
+FROM debian:buster
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends iptables && \
