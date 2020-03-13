@@ -5,8 +5,6 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-18.04
-    env:
-      PORT: 443
     steps:
-    - uses: actions/checkout@v1
-    - run: docker-compose build
+      - uses: actions/checkout@v2
+      - run: PORT=443 docker-compose build
